@@ -1,0 +1,5 @@
+(August 8, 2024)
+	- Added ability to press 'enter' in data edit box to send data.
+
+(August 6, 2024)
+	- Modified color scheme of display text box to white-on-dark-blue.
