@@ -146,7 +146,7 @@ LRESULT ClientWin_OnCtlColorStatic(CWindow* winPtr, const CWinEvent& eventObj)
     }
     else
     {
-    	return DefWindowProc(clientWin.winHandle, WM_CTLCOLORSTATIC, eventObj.wParam, eventObj.lParam);
+    	return DefWindowProc(winPtr->winHandle, WM_CTLCOLORSTATIC, eventObj.wParam, eventObj.lParam);
     }
 }
 

@@ -1,4 +1,5 @@
 (August 10, 2024)
+	- Modified ClientWin_OnCtlColorStatic() to use the winPtr parameter instead of global clientWin object.
 	- Added 'Clear Display' button.
 
 (August 8, 2024)
