@@ -18,6 +18,7 @@ CLabel portLabel;
 CEditBox dataEdit;
 CLabel dataLabel;
 CButton sendBtn;
+CButton clearBtn;
 CSocket* clientSocketPtr = NULL;
 
 COLORREF dispBkColor;
@@ -35,6 +36,7 @@ LRESULT ConnectBtn_OnClick(CWindow*, const CWinEvent&);
 LRESULT DisconnectBtn_OnClick(CWindow*, const CWinEvent&);
 LRESULT DataEdit_OnKeyPress(CWindow*, const CWinEvent&);
 LRESULT SendBtn_OnClick(CWindow*, const CWinEvent&);
+LRESULT ClearBtn_OnClick(CWindow*, const CWinEvent&);
 
 void Socket_OnConnect(CSocket*, const CSocketEvent&);
 void Socket_OnDisconnect(CSocket*, const CSocketEvent&);

@@ -52,6 +52,7 @@ bool ClientSetup(void)
     dataLabel.Create(&clientWin, "Data:", 0, 0, 35, 20, WS_VISIBLE|WS_CHILD);
     dataEdit.Create(&clientWin, "", 0, 0, 300, 20, WS_VISIBLE|WS_CHILD|WS_DISABLED|WS_TABSTOP, WS_EX_CONTROLPARENT);
     sendBtn.Create(&clientWin, "Send", 0, 0, 85, 30, WS_VISIBLE|WS_CHILD|WS_DISABLED);
+    clearBtn.Create(&clientWin, "Clear Display", 0, 0, 100, 30, WS_VISIBLE|WS_CHILD);
     
     //Set window events
     clientWin.AddEvent(WM_CLOSE, ClientWin_OnClose, WINEVENT_MESSAGE);
@@ -61,6 +62,7 @@ bool ClientSetup(void)
     disconnectBtn.AddEvent(BN_CLICKED, DisconnectBtn_OnClick, WINEVENT_COMMAND);
     dataEdit.AddEvent(WM_CHAR, DataEdit_OnKeyPress, WINEVENT_MESSAGE);
     sendBtn.AddEvent(BN_CLICKED, SendBtn_OnClick, WINEVENT_COMMAND);
+    clearBtn.AddEvent(BN_CLICKED, ClearBtn_OnClick, WINEVENT_COMMAND);
     
     //Set display colors
     dispBkColor = RGB(0,0,90);
@@ -124,7 +126,8 @@ LRESULT ClientWin_OnSize(CWindow* winPtr, const CWinEvent& eventObj)
     dispBox.SetSize(newWidth, newHeight - 100);
     dataLabel.SetPos(15, newHeight - 35);
     dataEdit.SetPos(50, newHeight - 35);
-    sendBtn.SetPos(370, newHeight - 40);
+    sendBtn.SetPos(360, newHeight - 40);
+    clearBtn.SetPos(465, newHeight - 40);
     
     return 0;
 }
@@ -201,6 +204,12 @@ LRESULT SendBtn_OnClick(CWindow* winPtr, const CWinEvent& eventObj)
 //
 {
     SendData();
+}
+
+LRESULT ClearBtn_OnClick(CWindow* winPtr, const CWinEvent& eventObj)
+//
+{
+    dispBox.SetText("");
 }
 
 void Socket_OnConnect(CSocket* socketPtr, const CSocketEvent& eventObj)

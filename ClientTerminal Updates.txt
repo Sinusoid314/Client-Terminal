@@ -1,3 +1,6 @@
+(August 10, 2024)
+	- Added 'Clear Display' button.
+
 (August 8, 2024)
 	- Added ability to press 'enter' in data edit box to send data.
 
